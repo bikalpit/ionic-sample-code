@@ -1,0 +1,88 @@
+<ion-menu side="left" id="authenticated" [content]="content">
+<div class="sidebar_bg">
+  <ion-header>
+    
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+    <ion-toolbar class="user_profile">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+              <div class="user_avatar">
+                <img src="assets/img/avatar.png">
+              </div>
+          </ion-col>
+          <ion-col padding-top col-8>
+            <ion-row> 
+              <div class="text-ios">
+                <h2 ion-text class="no-margin bold">
+                  {{fullname}}
+                </h2>
+                <span *ngIf="user_type == 'client'" color="white" class="login_type">Customer</span>
+                <span *ngIf="user_type == 'staff'" color="white" class="login_type">Staff</span>
+              </div>
+            </ion-row>
+
+          </ion-col>
+        </ion-row>
+        
+        <!-- <ion-row no-padding class="other-data">
+          <ion-col no-padding class="column">
+            <button ion-button icon-left small full color="light" menuClose (click)="fnMyAccount()">
+              <ion-icon name="contact"></ion-icon>
+              My Account
+            </button>
+          </ion-col>
+          <ion-col no-padding class="column">
+            <button ion-button icon-left small full color="light" menuClose (click)="logout()">
+              <ion-icon name="log-out"></ion-icon>
+              Log Out
+            </button>
+          </ion-col>
+        </ion-row> -->
+        
+      </ion-grid>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="content_bg">
+
+      <ion-row>
+          
+            <div class="sidebar_border"></div>
+          
+        </ion-row>
+
+    <ion-list class="user_list">
+
+      <button ion-item menuClose class="content_text content_bg" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+        <ion-icon [name]="menuItem.icon" class="sidebar_icon"></ion-icon>
+        <span ion-text class="sidebar_text">{{menuItem.title}}</span>
+      </button>
+
+      <button ion-item menuClose class="content_text content_bg" *ngFor="let item of appItems" (click)="openPage(item)">
+        <ion-icon [name]="item.icon" class="sidebar_icon"></ion-icon>
+        <span ion-text class="sidebar_text">{{item.title}}</span>
+      </button>
+
+      <button ion-item menuClose class="content_text content_bg" (click)="logout()">
+          <ion-icon name="log-out" class="sidebar_icon"></ion-icon>
+          <span ion-text class="sidebar_text" >Logout</span>
+      </button>
+
+    </ion-list>
+
+    <ion-row class="sidebar_close_btn">
+        <ion-col col-12 text-center >
+            <ion-icon name="close" class="sidebar_close" menuClose></ion-icon>
+        </ion-col>  
+    </ion-row>
+
+  </ion-content>
+</div>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

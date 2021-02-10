@@ -1,0 +1,430 @@
+<!--
+  Generated template for the BookingTripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary" hideBackButton="true">
+        <ion-buttons end>
+            <button ion-button icon-only class="my-button-white" (click)="fnHomePage()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>New Booking</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="main_booking_bg">
+    <div>
+
+        <ion-row class="booking_title_bg">
+            <h3 class="bookin_title">Where would you like us to provide service?</h3>
+        </ion-row>
+
+        <ion-slides #slides class="swiper-no-swiping">
+            <!-- First slide for postal code -->
+            <div class="main_view_bg">
+
+                <ion-slide *ngIf="postaCodeStatus == 'Y'" class="postal_code_slide main_view" padding>
+
+                    <div class="booking_img">
+                        <img src="../assets/img/profile-bg.png">
+                    </div>
+
+                    <ion-card class="card_border_radius" padding>
+
+                        <ion-item no-lines padding style="padding-right:8px;">
+                            <ion-label stacked color='primary' class="login_icon">
+                                <ion-icon name="apps"></ion-icon>
+                            </ion-label>
+                            <ion-input type="text" placeholder="Postal Code" [(ngModel)]="booking.postal_code" name="postal_code" class="login_text"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+
+                            <button type="submit" ion-button color="primary" class="btnsubmit" (click)="fnCheckPostalCode()">Verify
+                zip code</button>
+                        </ion-item>
+
+                    </ion-card>
+
+                </ion-slide>
+
+            </div>
+
+            <ion-slide>
+
+                <div class="main_view_bg">
+                    <div class="cc-selector main_view">
+
+                        <form [formGroup]="formService" (ngSubmit)="fnGetMethod(form)">
+
+                            <ion-row class="row">
+                                <ion-label class="lbl_text label label-md">Please Choose Service</ion-label>
+                            </ion-row>
+
+                            <ion-row radio-group formControlName="item" name="radio">
+                                <ion-item *ngFor="let item of serviceData let i = index" class="my-service" col-6>
+                                    <ion-label class="m-r-0 common_service_label" for="service-1" [ngClass]="service == i?'selected-service':'drinkcard-cc'">
+                                        <ion-radio id="service-1" name="service" value="{{item.id}}" (ionSelect)="radioChecked(i,item.title)"></ion-radio>
+                                        <!-- <i class="fa fa-check-circle my-ser-ico"></i> -->
+                                        <img *ngIf="item.image" width="130" height="130" src="{{item.image}}">
+                                        <img *ngIf="!item.image" width="130" height="130" src="assets/img/services/default_service.png">
+                                        <h3 class="service_title">{{item.title}}</h3>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-row>
+
+                            <ion-row class="btn_margin">
+
+                                <ion-item>
+
+                                    <button type="button" ion-button color="primary" class="btnPrevious" (click)="previous_unitData()">Previous</button>
+                                    <button type="submit" ion-button color="primary" class="btnNext" click="next()">Next</button>
+
+                                </ion-item>
+
+                            </ion-row>
+                        </form>
+                    </div>
+
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+
+                <!-- <div padding>
+        <h3 class="bookin_title2">Where would you like us to provide service?</h3>
+      </div> -->
+                <div class="main_view_bg">
+                    <div class="main_view">
+                        <div class="cc-selector" *ngIf=" methodData != null && methodData != undefined">
+
+                            <ion-row class="row">
+                                <ion-label class="lbl_text label label-md">Please Select Method</ion-label>
+                            </ion-row>
+
+                            <ion-row radio-group name="radio">
+                                <ion-item class="my-service" col-6 *ngFor="let items of methodData let i = index">
+
+                                    <ion-label for="service-1" [ngClass]="method_name == items.id?'selected-service':'drinkcard-cc'" class="m-r-0 common_service_label">
+                                        <ion-radio id="service-1" value="{{items.id}}" (ionSelect)="fnSelectedMethod(items.id,serviceID)">
+                                        </ion-radio>
+
+                                        <h3 class="service_title">{{items.method_title}}</h3>
+                                    </ion-label>
+
+                                </ion-item>
+                            </ion-row>
+                        </div>
+                        <div class="load_content" *ngIf=" unitData != null && unitData != undefined">
+                            <form (ngSubmit)="fnSetUnits(serviceID)">
+                                <ion-item *ngFor="let items of unitData let i = index">
+                                    <ion-label>{{items.units_title}}</ion-label>
+                                    <ion-select [(ngModel)]="unitArr.units[unitData[i].name]" name="{{unitData[i].name}}">
+                                        <ion-option *ngFor="let item of items.rate_and_qty" value="{{item.rate}}-{{item.qty}}-{{items.id}}-selected">{{item.qty}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+
+                                <ion-row class="btn_margin">
+                                    <ion-item>
+                                        <button type="submit" float-right ion-button color="primary" class="btnNext" click="next()">Next</button>
+                                        <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="previous_unitData()">Previous</button>
+                                    </ion-item>
+                                </ion-row>
+
+                            </form>
+
+                        </div>
+
+                        <ion-row class="btn_margin">
+                            <ion-item [ngClass]="method_name != ''?'hide_btn':''">
+                                <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prev()">Previous</button>
+                            </ion-item>
+                        </ion-row>
+                    </div>
+                </div>
+
+            </ion-slide>
+
+            <ion-slide>
+                <!-- <div padding>
+        <h3 class="bookin_title2">Where would you like us to provide service?</h3>
+      </div> -->
+                <div class="main_view_bg">
+                    <div class="main_view">
+                        <div class="load_content" *ngIf=" addonsData != null && addonsData != undefined">
+                            <div class="cc-selector">
+                                <form>
+                                    <ion-row class="row">
+                                        <ion-label class="lbl_text label label-md">Please Select Addons</ion-label>
+                                    </ion-row>
+
+                                    <ion-item col-12 *ngFor="let addonList of addonsData let i = index">
+                                        <ion-label>{{addonList.addon_service_name}}</ion-label>
+                                        <ion-select [(ngModel)]="addonArr.addons[addonsData[i].name]" name="{{addonsData[i].name}}">
+                                            <ion-option *ngFor="let item of addon_no_maxqty[i] let i = index" value="{{addonList.id}}-{{addonList.base_price}}-{{item}}">{{item}}</ion-option>
+                                        </ion-select>
+                                    </ion-item>
+                                </form>
+                            </div>
+                        </div>
+
+                        <ion-row class="btn_margin">
+                            <ion-item>
+                                <button type="submit" float-right ion-button color="primary" class="btnNext" (click)="fnSetAddons()">Next</button>
+                                <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prevone()">Previous</button>
+                            </ion-item>
+                        </ion-row>
+
+                    </div>
+                </div>
+            </ion-slide>
+
+            <ion-slide class="discount-slide">
+                <!-- <div padding>
+        <h3 class="bookin_title2">How often would you like us provide service?</h3> 
+      </div> -->
+                <div class="main_view_bg">
+                    <div class="load_content main_view" *ngIf=" freqData != null && freqData != undefined">
+                        <div class="cc-selector dis_method">
+                            <form [formGroup]="formSetFreq" (ngSubmit)="fnSetFreq(form)">
+
+                                <ion-row class="row">
+                                    <ion-label class="lbl_text label label-md">Please Select Offers</ion-label>
+                                </ion-row>
+
+                                <ion-row radio-group formControlName="freqList" name="radio">
+                                    <ion-item *ngFor="let freqList of freqData let i = index" class="my-service item-ios" col-6>
+                                        <ion-label class="common_service_label" for="service-1" [ngClass]="frequency == i?'selected-service':'drinkcard-cc'">
+                                            <ion-radio id="service-1" name="frequency" value="{{freqList.rates}},{{freqList.d_type}},{{freqList.discount_typename}},{{i+1}}" (ionSelect)="radioFrequencyChecked(i)" [checked]="i==0"></ion-radio>
+                                            <div class="dic-coupon">
+                                                <h3 class="dis_lbl">{{freqList.labels}}</h3>
+                                                <h3>{{freqList.discount_typename}}</h3>
+                                            </div>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-row>
+
+                                <ion-row class="btn_margin">
+                                    <ion-item>
+                                        <button type="submit" float-right ion-button color="primary" class="btnNext" click="next()">Next</button>
+                                        <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="previoustwo()">Previous</button>
+                                    </ion-item>
+                                </ion-row>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+
+            <ion-slide class="provider-slide">
+                <!-- <div class="m-t-20">
+      <h3 class="bookin_title2">When would you like us to come?</h3>  
+  </div> -->
+                <div class="main_view_bg">
+                    <form (ngSubmit)="fnGetTimeSlots()" class="main_view">
+
+                        <ion-row>
+                            <ion-label class="lbl_text">Please select Date</ion-label>
+                        </ion-row>
+                        <ion-row style="padding:25px;">
+                            <ion-col col-12 class="border_date">
+
+                                <ion-item>
+                                    <ion-label floating>Date</ion-label>
+                                    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="appointment.date" name="date" ngControl="date"></ion-datetime>
+                                </ion-item>
+
+                            </ion-col>
+
+                        </ion-row>
+
+                        <div class="load_content text-center">
+
+                            <ion-row>
+                                <ion-label class="lbl_text">Please select provider</ion-label>
+                            </ion-row>
+
+                            <ion-row radio-group>
+
+                                <ion-item *ngFor="let timeslots of staffData let i = index" class="my-service" col-4>
+                                    <ion-label for="provider-1" [ngClass]="serviceStaffId == timeslots.id?'selected-service':'drinkcard-cc'">
+                                        <ion-radio id="provider-1" ngControl="staffId" name="staffId" value="{{timeslots.id}}" (ionSelect)="radioServiceStaffChecked(timeslots.id)"></ion-radio>
+                                        <i class="fa fa-check-circle my-ser-ico"></i>
+                                        <i class="fa fa-user-circle provicer-icon" aria-hidden="true"></i>
+                                        <!-- <img width="130" height="130" src="../assets/img/providers/provider.png"> -->
+                                        <h3>{{timeslots.fullname}}</h3>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-row>
+
+                            <ion-row class="btn_margin">
+                                <ion-item>
+                                    <button type="submit" float-right ion-button color="primary" class="btnNext" click="next() nextToTimeSlote()">Next</button>
+                                    <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="previousthree()">Previous</button>
+                                </ion-item>
+                            </ion-row>
+                        </div>
+                    </form>
+                </div>
+            </ion-slide>
+
+            <ion-slide class="booking_time_slot">
+                <!-- <div class="m-t-20">
+        <h3 class="bookin_title2">When would you like us to come?</h3>  
+    </div> -->
+                <div class="load_content main_view_bg" *ngIf=" timeslotsData != null && timeslotsData != undefined">
+                    <form class="list-form main_view" padding>
+                        <ion-row>
+                            <ion-label class="lbl_text">Please select Time</ion-label>
+                        </ion-row>
+
+                        <ion-row class="border_date">
+                            <ion-col col-12>
+
+                                <ion-item>
+                                    <ion-label floating>TIME</ion-label>
+                                    <ion-select [(ngModel)]="staffSchedule.slot" name="slot" ngControl="slot" multiple="false">
+                                        <ion-option *ngFor="let item of timeslotsData" value="{{item}}">{{item}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+
+                            </ion-col>
+
+                        </ion-row>
+
+                        <ion-row class="btn_margin">
+                            <ion-item>
+                                <button type="submit" float-right ion-button color="primary" class="btnNext" (click)="fnSetTimeSLot()">Next</button>
+                                <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prev()">Previous</button>
+                            </ion-item>
+                        </ion-row>
+                    </form>
+                </div>
+            </ion-slide>
+
+            <ion-slide class="booking_summary">
+                <div class="main_view_bg">
+                    <div class="main_view">
+                        <ion-row>
+                            <ion-label class="lbl_text">Booking Summary</ion-label>
+                        </ion-row>
+
+                        <form class="list-form" (ngSubmit)="fnSetAppointmentDetails()" padding>
+                            <div class="load_content" *ngIf=" appointmentData != null && appointmentData != undefined">
+                                <div *ngFor="let item of appointmentData let i=index">
+                                    <ion-row>
+                                        <ion-item>
+                                            <ion-label stacked class="my-f-label">Service Name</ion-label>
+                                            <ion-label class="my-s-label">{{sessionData.service_name}}</ion-label>
+                                        </ion-item>
+
+                                        <ion-item>
+                                            <ion-label stacked class="my-f-label">Booking Date</ion-label>
+                                            <ion-label class="my-s-label">{{appointmentDate}}</ion-label>
+                                        </ion-item>
+
+                                        <ion-item>
+                                            <ion-label stacked class="my-f-label">Address</ion-label>
+                                            <ion-label class="my-s-label">{{item.address}} {{item.city}}</ion-label>
+                                        </ion-item>
+
+                                        <ion-item>
+                                            <ion-label stacked class="my-f-label">Cart Amount</ion-label>
+                                            <ion-label class="my-s-label">{{currSymbol}}{{totalTaxedAmount}}</ion-label>
+                                        </ion-item>
+                                    </ion-row>
+
+                                    <ion-row class="btn_margin">
+                                        <ion-item class="booking_summary_btns">
+                                            <!-- <button type="submit" float-right ion-button color="primary" class="btnNext bookappp-btn"  (click)="fnBookAppointment()">Book Appointment</button> -->
+                                            <!-- <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prev()"><img src="assets/img/prev.png" /></button> -->
+
+                                            <button type="submit" float-right ion-button color="primary" class="btnNext" (click)="fnActionSheet()">Book Appointment</button>
+                                            <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prev()">Previous</button>
+                                        </ion-item>
+                                    </ion-row>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </ion-slide>
+
+            <ion-slide class="booking_summary">
+                <div class="main_view_bg">
+                    <div class="main_view">
+                        <ion-row>
+                            <ion-label class="lbl_text">Credit/Debit Card Details</ion-label>
+                        </ion-row>
+                        <!-- <h3 class="lblTitle">Credit/Debit Card Details</h3> -->
+                        <div padding>
+
+                            <img class="logo m-t-10" src="assets/img/cardImg.png">
+
+                            <!-- <ion-item>
+                <input type="text" class="txtZipcode" [(ngModel)]="card.cardNumber" name="cardNumber" required placeholder="Card Number">
+              </ion-item> -->
+
+                            <ion-item no-lines padding>
+                                <ion-label stacked color='primary' class="login_icon">
+                                    <ion-icon name="card"></ion-icon>
+                                </ion-label>
+                                <ion-input type="number" placeholder="Card Number" name="cardNumber" [(ngModel)]="card.cardNumber" class="login_text" required></ion-input>
+                            </ion-item>
+
+                            <ion-item no-lines padding>
+                                <ion-label stacked color='primary' class="login_icon">
+                                    <ion-icon name="calendar"></ion-icon>
+                                </ion-label>
+                                <ion-input type="number" placeholder="Expiry Month" name="expiryMonth" [(ngModel)]="card.expiryMonth" class="login_text" required></ion-input>
+                            </ion-item>
+
+                            <ion-item no-lines padding>
+                                <ion-label stacked color='primary' class="login_icon">
+                                    <ion-icon name="calendar"></ion-icon>
+                                </ion-label>
+                                <ion-input type="number" placeholder="Expiry Year" name="expiryYear" [(ngModel)]="card.expiryYear" class="login_text" required></ion-input>
+                            </ion-item>
+
+                            <ion-item no-lines padding>
+                                <ion-label stacked color='primary' class="login_icon">
+                                    <ion-icon name="lock"></ion-icon>
+                                </ion-label>
+                                <ion-input type="number" placeholder="Card CVC" name="cvc" [(ngModel)]="card.cvc" class="login_text" required></ion-input>
+                            </ion-item>
+
+                            <ion-item class="m-b-40">
+                                <button type="submit" float-right ion-button color="primary" class="btnNext" (click)="fnCardPayment()">Book Appointment</button>
+                                <button type="button" float-left ion-button color="primary" class="btnPrevious" (click)="prev()">Previous</button>
+                            </ion-item>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+
+
+        </ion-slides>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <div *ngIf="orderSummeryView" class="order_summary">
+        <div class="order_summary_left" col-6>
+            <span class="order_summary_title">Service</span>
+            <h1 class="servicesName">{{sessionData.service_name}}</h1>
+            <h1 class="appoDate">{{this.appointmentDate}}</h1>
+            <h1 class="appoTime">{{this.selectedSlot}}</h1>
+        </div>
+        <div class="order_summary_right" col-6>
+            <span class="order_summary_title">Cost</span>
+            <h1 class="total_cost">{{currSymbol}}{{totalTaxedAmount}}</h1>
+            <h1 class="includingTax" *ngIf="taxlabel == 1">(Including Tax)</h1>
+        </div>
+    </div>
+</ion-footer>

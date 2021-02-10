@@ -1,0 +1,105 @@
+<!--
+  Generated template for the TransactionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Payment Transactions</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="trips detail-bg">
+ <ion-refresher (ionRefresh)="doRefresh($event)" style="color:green">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="users == 0" text-center padding-top class="lblNoData">
+
+    
+            <span>{{noData}}</span>
+        </div>
+
+  <div class="my_booking">   
+      <ul *ngFor="let item of users let i=index">
+          <ion-card class="card_border_radius">
+              <li class="booking_list">
+
+          <div tappable (click)="fnViewTransaction(item.order_id)">
+
+              <ion-row>
+                  <ion-col col-12>
+                    <div class="content">
+                        <label class="order_number order_number_color">#{{item.order_id}}</label>
+                    </div>
+                  </ion-col>
+              </ion-row>
+
+              <ion-row>
+                  <ion-col col-7>
+                      <div class="content">
+                          <label class="service_title">{{item.service_name}}</label>
+                        </div>
+                  </ion-col>
+                  
+                  <ion-col col-1>
+                  
+                  </ion-col>
+
+                  <ion-col col-4>
+                      <div class="content" >
+                          <div class="price-all">
+                              <b>{{currSymbol}}</b>{{item.net_amount}}
+                            </div>
+                      </div>
+                  </ion-col>
+                </ion-row>
+
+
+              <ion-row>
+                  <ion-col col-12>
+                    <div class="content">
+                          <label>{{item.payment_method}}</label>
+                    </div>
+                  </ion-col>
+              </ion-row>
+
+
+
+                <ion-row>
+                    <ion-col col-6>
+                        <label class="lblDate_lblTime">DATE</label>
+                        <label>{{item.payment_date_format.split(",")[1]}}, {{item.payment_date_format.split(",")[0]}}</label>
+                      </ion-col>
+                    
+                    <ion-col col-3>
+                        <label class="lblDate_lblTime">TIME</label>
+                        <label>{{item.appointment_time}}</label>
+                      </ion-col>
+  
+                    <ion-col col-3>
+                        <div class="status_tag">
+                            <label class="badge3" *ngIf="item.payment_status == 'Completed'">Confirmed</label>
+                            <label class="badge3" *ngIf="item.payment_status == 'Pending'">Pending</label>
+
+                          </div>
+                     </ion-col>
+                 </ion-row>
+
+        </div>
+
+      </li>
+      </ion-card>
+      </ul>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="!isloadmore">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

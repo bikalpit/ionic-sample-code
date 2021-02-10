@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="primary" class="button-md-primary text-white">
+      <ion-buttons end>
+        <button ion-button icon-only class="my-button-white" (click)="fnCloseModel()">
+          <ion-icon name="ios-close-circle-outline"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title text-center>Select Staff</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <div *ngIf="allUsers.length > 0">
+        <ion-item *ngFor="let member of allUsers">
+          <ion-label color="primary">{{member.fullname}}</ion-label>
+          <!-- <ion-checkbox color="dark" (click)="selectMember(member)" [(ngModel)]="member.checked"></ion-checkbox> -->
+          <ion-checkbox color="primary" (ionChange)="addCheckbox($event,member.id)" ></ion-checkbox>
+        </ion-item>
+      </div>
+   
+</ion-content>
+<ion-footer padding>
+    <button ion-button full (click)="done()">Done</button>
+</ion-footer>

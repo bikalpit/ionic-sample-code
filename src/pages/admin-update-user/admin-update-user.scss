@@ -1,0 +1,34 @@
+page-admin-update-user {
+    .header_text {
+        padding-left: 0px;
+        font-weight: 500;
+        font-size: 1.7rem;
+        letter-spacing: 0.5px;
+    }
+    .user_fsize {
+        font-size: 1.5rem;
+    }
+    .color-white {
+        color: #fff;
+    }
+    .auth-page .scroll-content .login-content .list-form ion-item input {
+        color: #fff;
+    }
+    .button-clear-md-dark {
+        color: #fff;
+    }
+    .color-dark {
+        color: #222326;
+    }
+    .primary-color {
+        color: #3C94F8;
+    }
+    .card_radious {
+        border-radius: 10px !important;
+        -webkit-box-shadow: 0 0 8px rgba(86, 61, 124, 0.2), 0 3px 7px rgba(86, 61, 124, 0.15);
+        box-shadow: 0 0 8px rgba(86, 61, 124, 0.2), 0 3px 7px rgba(86, 61, 124, 0.15);
+    }
+    .label-md {
+        margin: 13px 0px 13px 0;
+    }
+}

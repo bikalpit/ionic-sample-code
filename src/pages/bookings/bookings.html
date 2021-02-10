@@ -1,0 +1,31 @@
+<!-- -->
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title text-left>Bookings</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="trips detail-bg">
+<ion-tabs tabsPlacement="top">
+  <ion-tab [root]="tab1Root" tabTitle="All" ></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Past" ></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Upcoming" ></ion-tab>
+</ion-tabs>
+  
+<!-- <ion-buttons end *ngIf="user_type == 'client'">
+  <button ion-button icon-only color="blue" (click)="fnAddBooking()">
+    <ion-icon name="ios-add-circle-outline"></ion-icon>
+  </button>
+  </ion-buttons> -->
+  
+</ion-content>
+<ion-footer>
+    <ion-row class="sidebar_add_btn row">
+        <ion-col class="col" col-12="" text-center="">
+            <ion-icon *ngIf="user_type == 'client'" class="sidebar_add icon icon-md ion-md-add" name="add" role="img" aria-label="add" (click)="fnAddBooking()"></ion-icon>
+        </ion-col>  
+    </ion-row>
+</ion-footer>

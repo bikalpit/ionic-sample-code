@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+          
+  <ion-row>
+    <ion-col col-12 class="head_top">
+         <!-- <p class="lblName">Welcome to {{fullname}}</p> -->
+         <p class="time">{{myDate}}</p>
+         <p class="lblheading"></p>
+         <!-- <p class="lblheading">Make your online appointment scheduling super easy with Cleanto</p>  -->
+    </ion-col>
+  </ion-row>
+
+<div class="main_view_bg">
+<div class="main_view">
+<ion-grid>
+
+  <ion-row>
+    <ion-col  col-6 (click)="gotoActiveAppointment('active')" class="padding-10">
+      <div class="menu_opt">
+        <div class="icon_bg">
+            <ion-icon  class="first" name="timer" class="cus_icon"></ion-icon>
+        </div>
+            <label class="labelTitle">New Booking</label>
+      </div>
+    </ion-col>
+
+    <ion-col col-6 (click)="gotoActiveAppointment('all')" class="padding-10">
+      <div class="menu_opt">
+        <div class="icon_bg">
+         <ion-icon name="calendar" class="cus_icon"></ion-icon>
+        </div>
+         <label class="labelTitle">All Bookings</label>
+      </div>
+    </ion-col>
+  
+    <ion-col col-6  (click)="gotoAllUser('customer')" class="padding-10">
+      <div class="menu_opt">
+        <div class="icon_bg">
+         <ion-icon name="contacts" class="cus_icon"></ion-icon>
+        </div>
+         <label class="labelTitle">All Customer</label>
+      </div>
+    </ion-col>
+   
+    <ion-col col-6 (click)="gotoAllUser('staff')" class="padding-10">
+      <div class="menu_opt">
+        <div class="icon_bg">
+          <ion-icon name="people" class="cus_icon"></ion-icon>
+        </div>
+       <label class="labelTitle">All Staff</label>
+      </div>
+  </ion-col>
+  <!-- <ion-col col-6 [navPush]="Account" class="padding-10">
+      <div class="menu_opt">
+        <div class="icon_bg">
+          <ion-icon name="cog" class="cus_icon"></ion-icon>
+        </div>
+       <label class="labelTitle">Settings</label>
+      </div>
+  </ion-col> -->
+  </ion-row>
+</ion-grid>
+</div>
+</div>
+</ion-content>

@@ -1,0 +1,218 @@
+<!-- -->
+<!-- <ion-content class="auth-page">
+  <div class="login-content"> -->
+
+    <!-- Logo -->
+    <!-- <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-white">
+        <strong class="">Ionic 3</strong> Start Theme
+      </h2>
+    </div> -->
+    <!--<div text-center class="animated fadeInDown cus-mar-logo">
+      <div class="logo"></div>
+       <h2 ion-text class="text-primary">
+        <strong class="title_appo">Make your online appointment</strong>
+      </h2>
+    </div> -->
+
+    <!-- Login form -->
+    <!-- <form class="list-form">
+      <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="person" item-start class="text-primary color-white"></ion-icon>
+          First Name
+        </ion-label>
+        <ion-input type="text" class="color-white" name="firstname" [(ngModel)]="register.firstname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="person" item-start class="text-primary color-white"></ion-icon>
+          Last Name
+        </ion-label>
+        <ion-input type="text" class="color-white" name="lastname" [(ngModel)]="register.lastname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="mail" item-start class="text-primary color-white"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" class="color-white" name="email" [(ngModel)]="register.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="lock" item-start class="text-primary color-white"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" class="color-white" name="password" [(ngModel)]="register.password"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="call" item-start class="text-primary color-white"></ion-icon>
+          Phone
+        </ion-label>
+        <ion-input type="number" class="color-white" name="phone" [(ngModel)]="register.phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="home" item-start class="text-primary color-white"></ion-icon>
+          Address
+        </ion-label>
+        <ion-input type="text" class="color-white" name="address" [(ngModel)]="register.address"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="home" item-start class="text-primary color-white"></ion-icon>
+          City
+        </ion-label>
+        <ion-input type="text" class="color-white" name="city" [(ngModel)]="register.city"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="home" item-start class="text-primary color-white"></ion-icon>
+          State
+        </ion-label>
+        <ion-input type="text" class="color-white" name="state" [(ngModel)]="register.state"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating class="color-white">
+          <ion-icon name="pin" item-start class="text-primary color-white"></ion-icon>
+          Zipcode
+        </ion-label>
+        <ion-input type="number" class="color-white" name="zipcode" [(ngModel)]="register.zipcode"></ion-input>
+      </ion-item>
+    </form>
+
+    <div margin-top>
+      <button ion-button block color="" class="button-md-white"  (click)="fnRegister()">Sign Up</button> -->
+
+    <!--  <p text-center ion-text color="secondary">Or Sign Up with:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-twitter">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-gplus">
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>-->
+
+    <!-- Other links -->
+    <!-- <div class="mb-30" text-center margin-bootm margin-top>
+      <span ion-text color="" class="color-white" tappable (click)="login()"><strong>Already have an account? Sign In</strong></span>
+    </div>
+
+  </div>
+</ion-content> -->
+
+
+<ion-content >
+
+    <div class="login_bg">
+  
+      <!-- Logo -->
+      <div text-center>
+               
+        <ion-label class="logo"></ion-label>
+        
+        <div text-left class="header_text">
+          <ion-label><ion-icon name="arrow-back" (click)="fnBackToLogin()"></ion-icon> Sign In</ion-label>
+        </div>
+  
+      </div>
+  
+      <div padding class="padding-top-0">
+
+      <!-- register form -->
+  
+            <ion-card class="card_radious">
+  
+              <ion-item no-lines padding margin-top>
+                <ion-label stacked color='primary' class="login_icon"><ion-icon name="person"></ion-icon></ion-label>
+                <ion-input type="text" placeholder="First Name" name="firstname" [(ngModel)]="register.firstname" class="login_text"></ion-input>
+
+              </ion-item>
+              
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-input type="text" placeholder="Last Name" name="lastname" [(ngModel)]="register.lastname" class="login_text"></ion-input>
+
+
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="mail"></ion-icon></ion-label>
+                  <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="register.email" class="login_text"></ion-input>
+
+              </ion-item>
+              
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="phone-portrait"></ion-icon></ion-label>
+                  <ion-input type="number" placeholder="Phone" name="phone" [(ngModel)]="register.phone" class="login_text"></ion-input>
+
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="pin"></ion-icon></ion-label>
+                  <ion-input type="text" placeholder="Address" name="address" [(ngModel)]="register.address" class="login_text"></ion-input>
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="pin"></ion-icon></ion-label>
+                  <ion-input type="text" placeholder="City" name="city" [(ngModel)]="register.city" class="login_text"></ion-input>
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="pin"></ion-icon></ion-label>
+                  <ion-input type="text" placeholder="Country" name="state" [(ngModel)]="register.state" class="login_text"></ion-input>
+
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="pin"></ion-icon></ion-label>
+                  <ion-input type="text" placeholder="Postcode" name="zipcode" [(ngModel)]="register.zipcode" class="login_text"></ion-input>
+
+              </ion-item>
+
+              <ion-item no-lines padding>
+                  <ion-label stacked color='primary' class="login_icon"><ion-icon name="lock"></ion-icon></ion-label>
+                  <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="register.password"  clearOnEdit="false" class="login_text"></ion-input>
+              </ion-item>
+ 
+              <ion-item no-lines margin-bottom padding>
+                  <button ion-button icon-start class="login_btn" block color="dark" (click)="fnRegister()">Sign Up</button>
+
+              </ion-item>
+            
+            </ion-card>
+      
+      </div>
+  
+      <!-- Other links -->
+      <div text-center class="form_signup" margin-bottom>
+        <span ion-text class="color-dark" tappable (click)="login()">Already Have an Account? <span class="primary-color">Sign in</span></span>
+      </div>
+     
+    </div>
+  </ion-content>
+  

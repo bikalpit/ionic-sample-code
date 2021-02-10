@@ -1,0 +1,684 @@
+page-booking-trip {
+
+
+	.toolbar-title-md {
+		/* padding: 0px 0px; */
+		font-size: 2rem;
+		font-weight: 500;
+		text-align: center;
+		margin-left: 50px;
+	}
+	
+	.swiper-container{
+		
+		overflow-y: scroll;
+
+		margin-top: 56px;
+		margin-bottom: 44px;
+	}
+
+	.my-service{
+		float: left;
+	}
+	.cc-selector ion-radio{
+	    margin:0;padding:0;
+	    -webkit-appearance:none;
+	       -moz-appearance:none;
+	            appearance:none;
+	}
+/*.a-center{
+	text-align: center;
+}
+.loader-center{
+	align-content: center;
+}*/
+	.cc-selector ion-input:active +.drinkcard-cc{
+		opacity: .9;
+	}
+	.cc-selector ion-input:checked +.drinkcard-cc {
+	    -webkit-filter: none;
+	       -moz-filter: none;
+	            filter: none;
+	}
+
+	.cc-selector .drinkcard-cc .my-ser-ico{
+	   display: none;
+	}
+	.cc-selector .selected-service .my-ser-ico{
+	    display: block;
+	    position: absolute;
+	    right: 0px;
+	    font-size: 25px;
+	    color: #3C94F8;
+	    bottom: 12px;
+	}
+	// .cc-selector .selected-service img{
+	// 	border: 3px solid #3C94F8;
+	// }
+
+	.fa-calendar{
+		padding-right: 10px;
+	}
+	.cc-selector.dis_method .dic-coupon{
+		border: 2px solid #3C94F8;
+	    border-radius: 4px;
+	    padding-top: 12px;
+	}
+	.text-left{
+		text-align: left;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.cc-selector.dis_method .selected-service .dic-coupon{
+		background-color: #222326;
+	}
+	.cc-selector.dis_method .selected-service .dic-coupon h3{
+		color: #222326;
+	}.my-ser-ico
+	.cc-selector.dis_method .selected-service .my-ser-ico{
+		display: none
+	}
+
+/*	.cc-selector ion-input:checked +.drinkcard-cc .my-ser-ico{
+	    visibility: visible;
+
+	}
+	.cc-selector .my-ser-ico{
+	    font-size:20px;
+	    color:blue;
+	    position: absolute;
+	    right: 0px;
+	    visibility: hidden;
+	}*/
+	.selected-service{
+	    cursor:pointer;
+	    background-size:contain;
+	    background-repeat:no-repeat;
+	    display:inline-block;
+	    width:120px;
+	    height:150px;
+	    position: relative;
+	}
+	.drinkcard-cc{
+	    cursor:pointer;
+	    background-size:contain;
+	    background-repeat:no-repeat;
+	    display:inline-block;
+	    width:120px;
+	    height:150px;
+	    position: relative;
+	    -webkit-transition: all 100ms ease-in;
+	       -moz-transition: all 100ms ease-in;
+	            transition: all 100ms ease-in;
+	/*    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+	       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+	            filter: brightness(1.8) grayscale(1) opacity(.7);*/
+	}
+	.drinkcard-cc:hover{
+	   /* -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	            filter: brightness(1.2) grayscale(.5) opacity(.9);*/
+	}
+	.my-service img {
+        display: inline;
+    }
+    .list-md .item-block .item-inner{
+    	border-bottom:0px !important;
+    }
+    .cc-selector .radio-md .radio-icon{
+    	display: none;
+    }
+    .item-md.item-block .item-inner{
+		border-bottom:0px !important;
+    }
+	
+    .cc-selector img{
+		margin: 0 auto;
+		display: table;
+		width: 120px;
+		margin-top: -10px !important;
+		padding: 0px 5px 5px 5px;
+    }
+    .cc-selector h3{
+    	margin: 10px 0;
+    	text-align: center;
+    }
+  
+    .hide_btn{
+    	display: none;
+    }
+    .discount-slide .drinkcard-cc, .discount-slide .selected-service{
+    	height:80px;
+    }
+
+   /* .provider-slide .drinkcard-cc, .provider-slide .selected-service{
+    	height:60px;
+    }*/
+    .provider-slide .selected-service .provicer-icon, 
+.provider-slide .drinkcard-cc .provicer-icon{
+		color:#222326;
+		font-size: 60px;
+		text-align: center;
+	    width: 100%;
+	    padding: 10px 4px;
+    }
+    .provider-slide .selected-service .provicer-icon{
+    	color:#3C94F8;
+    }
+
+	.provider-slide .drinkcard-cc .my-ser-ico{
+	   display: none;
+	}
+	.provider-slide .selected-service .my-ser-ico{
+	    display: block;
+	    position: absolute;
+	    right: 3px;
+	    font-size: 25px;
+	    color: #3C94F8;
+	    bottom: 80px;
+	}
+	
+    .provider-slide .radio-md .radio-icon{
+    	display: none;
+	}
+	.provider-slide .drinkcard-cc h3{
+		color: #222326;
+		text-align: center;
+	}
+    .provider-slide .selected-service h3 {
+		text-align: center;
+		color: #3C94F8;
+	}
+	
+	.provider-slide .my-service{
+		position: relative;
+		height: 130px;
+		
+	}
+	 .border_date{
+		border: 1px solid #A1B0C1;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+	.provider-slide .border_time{
+		border: 1px solid #A1B0C1;
+		border-top-right-radius: 20px;
+	}
+	
+	.item-label-stacked ion-datetime, .item-label-floating ion-datetime {
+		padding-left: 0;
+		width: 100%;
+		color: #222326;
+	}
+    .booking_summary .my-f-label{
+    	font-size: 11px;
+		color: #A1B0C1;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding-top: 10px;
+    }
+
+    .booking_summary .my-s-label{
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0;
+		color: #222326;
+		padding-top: 0;
+		padding-bottom: 10px;
+	}
+	.booking_summary .btnNext{
+		font-weight: 600;
+		font-size: 11px !important;
+		width: 48%;
+	}
+	.booking_summary .btnPrevious{
+		font-weight: 600;
+		font-size: 11px !important;
+		width: 48%;
+		margin-right: 0px;
+	}
+    .booking_summary .bookappp-btn{
+    	width: 185px;
+	    height: 50px;
+	    padding: 5px 8px;
+	    color: #fff;
+	    background-color: #3C94F8;
+	    border-radius: 30px;
+	    font-size: 14px;
+	    margin-right: 0px;
+	}
+	.booking_summary .btn_margin {
+		display: flex;
+    	margin: 45px 0 10px 0;
+	}
+    .slide_title{
+		padding: 5px 10px;
+		font-size: 110%;
+		font-weight: bold;
+		text-transform: initial;
+	
+
+	}
+
+	.txtZipcode {
+		border: 1px solid #D1D1D1;
+		border-radius: 5px;
+		margin-bottom: 1.5rem;
+		box-sizing: border-box;
+		width: 100%;
+		height: 3.4375rem;
+		margin: 5px 0 1rem;
+		padding: 1.5rem;
+		border: 1px solid #D1D1D1;
+		font-weight: normal;
+		border: 1px solid #D1D1D1;
+		padding-left: 1rem;
+		color: #434343;
+		font-size: 17px;
+	}
+
+ .btnVeifyZipcode {
+	color: #fff;
+    background-color: #3C94F8;
+    width: 65%;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 0;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: initial;
+    text-transform: capitalize;
+	}
+
+
+	.txtAppDate{
+		margin-left: 0;
+		margin-bottom: 0;
+		margin-top: -10%;
+		/* border-radius: 5px; */
+		width: 100%;
+		/* box-sizing: border-box; */
+		/* height: 3.4375rem; */
+		font-weight: normal;
+		padding-left: -7rem;
+		padding-right: 11rem;
+		color: #434343;
+	}
+
+	.order_summary {
+	
+	width: 100%;
+	height: 100px;
+	// min-height: 95px;
+    background: #fafafa;
+    position: fixed;
+    padding-top: 0px;
+    left: 0px;
+    bottom: 0px;
+	}
+
+	/*footer summary*/
+
+      .order_summary_left{
+		float: left;
+		padding-left: 10px;
+	   }
+		
+	.order_summary_left, .order_summary_right .order_summary_title{
+
+		color: #A1B0C1;
+		font-size: 14px;
+		text-align: left;
+		text-transform: uppercase;
+		// margin-bottom: 5px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+	.servicesName{
+	margin-top: 5px;
+    color: #222326;
+    font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	margin-bottom: 7px;
+	text-transform: capitalize;
+	}
+
+   
+	.order_summary_right {
+
+	color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    /* text-align: right; */
+    /* right: 32%; */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    position: absolute;
+	left: 60%;
+	
+	}
+
+	.list-ios:not(.list-inset) .item:last-child { 
+		--inner-border-width: 0; 
+		--border-width: 0 0 0.55px 0;
+	  } 
+	
+	.total_cost{
+		margin-top: 1px;
+		color: #3C94F8;
+		font-size: 22px;
+		font-weight: 500;
+	}
+	.total_cost:first-letter{
+		font-size: 12px !important;
+		font-weight: bold !important;
+	}
+	//  .total_cost b{
+	// 	// font-weight: bold;
+	// 	font-size: 12px;
+	// }
+	.includingTax{
+
+		margin-top: -3%;
+		color: black;
+		font-size: 10px;
+		font-weight: 600;
+		text-transform: capitalize;
+		letter-spacing: 0.5px;
+	}
+
+	.appoDate{
+		margin-top: -3%;
+		color: #222326;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin-bottom: 7px;
+	}
+
+	.appoTime{
+		margin-top: -3%;
+		color: #222326;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin-bottom: 0px;
+	}
+
+	.swiper-container{
+		padding-bottom: 30px;
+		margin-top:-20px;
+	}
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+		color: #A1B0C1;
+		font-size: 15px;
+		font-weight: 500;
+	}
+	
+	.m-r-0{
+		margin-right: 0px;
+	}
+	.m-t-10{
+		margin-top: 10px;
+	}
+	.m-t-20{
+		margin-top: 20px;
+	}
+	.p-r-0{
+		padding-right: 0px;
+	}
+	.p-l-0{
+		padding-left: 0px;
+	}
+	.p-b-0{
+		padding-bottom: 0px;
+	}
+	// .btnNext, .btnPrevious{
+	// 	top:50%;
+	// 	height: 35px !important;
+	// }
+
+	.postal_code_slide{
+		// margin-top: 20px;
+		background-color:#fff;
+	}
+	// .cc-selector{
+	// 	margin-top: -15px;
+	// }
+	.provider-slide .drinkcard-cc, .provider-slide  .selected-service{
+		height:125px;
+	}
+	.provider-slide .my-service{
+		padding:0 5px;
+	}
+	.order_summary .total_cost:first-letter{
+		font-size: 20px;
+	}
+	.item-ios.item-block .item-inner{
+		border-bottom:0;
+	}
+	.item-ios ion-radio{
+		//transform: scale(0);
+		margin-top: -17px !important;
+	}
+	.item-ios .cc-selector h3{
+		margin:6px 0
+	}
+	// @media only screen and ( min-width : 768px) and ( max-width : 1024px) {
+	// 	.btnNext, .btnPrevious{
+	// 		margin: -2% -5%;
+	// 	}
+
+	// }
+	// @media only screen and ( max-width : 320px){
+	// 	.label-ios{
+	// 		margin-top:0;
+	// 	}
+	// }
+	// ***********************
+
+	.btnsubmit{
+	    border-radius: 4px;
+		font-size: 1.6rem !important;
+		color: #fff;
+		background-color: #3C94F8;
+		margin: 20px 0px 10px 0px;
+		padding: 20px !important;
+		text-transform: unset;
+		width: 100%;
+	}
+	.card_border_radius{
+		border-radius: 10px !important;
+	}
+	.booking_img{
+		width: 100%;
+    	height: auto;
+	}
+
+
+	.padding-10 {
+		padding: 8px;
+	}
+	.booking_opt {
+		width: 100%;
+		height: 160px;
+		border: 1px solid #e6e6e6;
+		border-radius: 5px;
+		color: #3C94F8;
+		text-align: center;
+	}
+	.booking_opt .booking_image {
+		width: 100%;
+		height: 120px;
+	}
+	.booking_image img {
+		display: inline-block;
+		padding-top: 15px;
+		width: 100%;
+		height: auto;
+	}
+	.labelTitle {
+		font-size: 11px;
+		display: block;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		font-weight: 500;
+		margin-top: 5px;
+	}
+	.btn_margin{
+		display: inline-block;
+		margin: 15px 0 35px 0;
+	}
+	.btnNext{
+		color: #fff;
+		background-color: #3C94F8;
+		width: 115px;
+		padding: 5px;
+		margin-right: 0;
+		font-weight: 500;
+		border-radius: 2px;
+		text-transform: uppercase;
+		height: 35px !important;
+	}
+	
+	.btnPrevious{
+		color: #fff;
+		background-color: #3C94F8;
+		width: 115px;
+		padding: 5px;
+		margin-right: 0;
+		font-weight: 500;
+		border-radius: 2px;
+		text-transform: uppercase;
+		margin-right: 17px;
+		height: 35px !important;
+	}
+	.common_service_label img{
+		width: 60px;
+		height: 60px;
+		border-radius: 100%;
+		margin: -10px auto !important;
+		display: table;
+		overflow: hidden;
+		padding: 0;
+	}
+	.common_service_label .service_title{
+		color:#3C94F8;
+		font-size: 13px;
+		margin: 20px auto !important;
+		white-space: normal;
+	}
+	.my-service{
+		position: relative;
+		height: 190px;
+	
+	}
+
+	//***********
+
+	.common_service_label{
+		padding: 15px 10px;
+		border: 1px solid #A1B0C1;
+		border-radius: 4px;
+		position: unset;
+	}
+	.common_service_label:after{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		border-radius: 100%;
+		display: block;
+		font-size: 16px;
+		color:#fff;
+		left:43%;
+		border:1px solid #fff;
+		line-height: 2;
+		bottom: 6px;
+		content: "\f067";
+		text-align: center;
+		font-family: Fontawesome;
+		background-color: #82b721;    
+		box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5)
+	}
+	.item-radio-checked .common_service_label{
+		background-color: #3C94F8;
+		border-color: #3C94F8;
+	}
+	.item-radio-checked .common_service_label .service_title{
+		color:#fff;
+	}
+	.item-radio-checked .common_service_label:after{
+
+		// content: "\f068" !important;
+		// background-color: #fff;
+		// color: #3C94F8;
+		display: none;
+	}
+	// .swiper-container{
+	// 	margin-top: auto !important;
+	// 	padding-bottom: 0;
+	// 	margin-bottom: 0;
+	// }
+	// .height_100{
+	// 	height:100%;
+	// }
+	.scroll-content{
+		padding: 0 !important;
+	}
+
+	// .box_bgc {
+	// 	background-color: #fff;
+	// 	// height: 82vh;
+	// 	// border-top-right-radius: 20px;
+	// 	// border-top-left-radius: 20px;
+	// 	padding: 15px;
+	// }
+	ion-select{
+		color:#A1B0C1;
+	}
+	.cc-selector.dis_method .selected-service .dic-coupon {
+		background-color: transparent;
+	}
+	.dic-coupon h3 {
+		color: #3C94F8;
+	}
+	.dic-coupon .dis_lbl{
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.cc-selector.dis_method .selected-service .dic-coupon h3 {
+		color: #fff;
+	}
+	.dic-coupon {
+		border: 0px !important;
+		border-radius: 0px !important;
+		padding-top: 22% !important;
+	}
+	
+	.discount-slide .selected-service, .discount-slide  .drinkcard-cc {
+		height: 150px;
+	}
+	.item-ios{
+		color: #A1B0C1;
+	}
+
+	/* Portrait */
+	@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 359px) 
+	and (orientation: portrait) 
+	and (-webkit-min-device-pixel-ratio: 2) {
+		.booking_summary .btnNext {
+			font-size: 10px !important;
+		}
+		.booking_summary .btnPrevious {
+			font-size: 10px !important;
+		}
+		.dic-coupon .dis_lbl{
+			font-size: 17px;
+		}
+	}
+}

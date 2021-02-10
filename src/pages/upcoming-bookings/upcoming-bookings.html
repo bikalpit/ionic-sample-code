@@ -1,0 +1,87 @@
+<ion-content padding class="trips detail-bg">
+ <ion-refresher (ionRefresh)="doRefresh($event)" style="color:green">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> 
+   <div *ngIf="upcomingbooking == 0" text-center padding-top class="lblNoData">
+            <span>{{noData}}</span>
+        </div>
+  <div class="my_booking">    
+      <ul *ngFor="let item of upcomingbooking let i=index ">
+          <ion-card class="card_border_radius">
+        <li class="booking_list">
+          
+            <a class="close_btn" *ngIf="item.booking_status != 'CC'" ><ion-icon name="close" (click)="fnCancelBooking(item.order_id,item.gc_event_id,item.gc_staff_event_id,item.staff_ids)"></ion-icon></a>
+
+          <div tappable (click)="fnViewBooking(item.order_id)">
+
+                   <ion-row>
+                        <ion-col col-12>
+                          <div class="content">
+                              <label class="order_number order_number_color">#{{item.order_id}}</label>
+                          </div>
+                        </ion-col>
+                    </ion-row>
+
+
+                    <ion-row>
+                        <ion-col col-7>
+                            <div class="content">
+                                <label class="service_title">{{item.title}}</label>
+                            </div>
+                        </ion-col>
+                        
+                        <ion-col col-1>
+                        
+                        </ion-col>
+
+                        <ion-col col-4>
+                            <div class="content" >
+                                <div class="price-all">
+                                    <b>{{currSymbol}}</b>{{item.total_payment}}
+                                  </div>
+  
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+
+                    <ion-row>
+  
+                        <ion-col col-6>
+                            <label class="lblDate_lblTime">DATE</label>
+                            <label>{{item.appointment_date.split(",")[1]}}, {{item.appointment_date.split(",")[0]}}</label>
+                          </ion-col>
+                        
+                          <ion-col col-3>
+                              <label class="lblDate_lblTime">TIME</label>
+                              <label>{{item.appointment_time}}</label>
+                              
+                          </ion-col>
+
+                          <ion-col col-3>
+                              <div class="status_tag">
+                                  <label *ngIf="item.booking_status == 'C'" class="badge3">Confirmed</label>
+                                  <label *ngIf="item.booking_status == 'R'" class="badge3">Rejected</label>
+                                  <label *ngIf="item.booking_status == 'A'" class="badge3">Pending</label>
+                                  <label *ngIf="item.booking_status == 'CS'" class="badge3">Cancelled</label>
+                                  <label *ngIf="item.booking_status == 'CC'" class="badge3">Cancelled</label>
+                                  <label *ngIf="item.booking_status == 'RS'" class="badge3">Reschedule</label>
+                                  <label *ngIf="item.booking_status == 'MN'"  class="badge3">No Show</label>
+                                  <label *ngIf="item.booking_status == 'CO'" class="badge3">Complete</label>
+
+                              </div>
+                            </ion-col>
+                      </ion-row>
+
+        </div>
+
+
+        <!-- <a class="cancel-btn" *ngIf="item.booking_status != 'CC'" type="submit" float-right ion-button color="primary" (click)="fnCancelBooking(item.order_id,item.gc_event_id,item.gc_staff_event_id,item.staff_ids)" ><i class="fa fa-ban"></i></a> -->
+        </li>
+      </ion-card>
+      </ul>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="!isloadmore">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

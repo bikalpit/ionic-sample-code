@@ -1,0 +1,151 @@
+page-home {
+
+  .scroll-content{
+    padding:0 !important;
+    // background: url(../assets/img/Home_Screen.png) no-repeat;
+    // background-size: cover;
+  }
+  .custom_grid{
+    padding: 15px;
+    }
+
+/* header section */
+  .head_top{
+    width: 100%;
+    height: 100%;
+    // background-color: #3C94F8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    padding: 0 !important;
+    background: url(../assets/img/Home_Screen.png) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .head_top p{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 8%;
+    letter-spacing: 0.5px;
+  }
+  .head_top .lblName{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .head_top .time{
+    font-size: 60px;
+    -webkit-margin-after: 0em;
+    margin-block-end: 0em;
+    font-weight: 500;
+  }
+  .head_top .lblheading{
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+/* menu section */
+
+  .padding-10{
+    padding: 8px;
+  }
+  // .main_view{
+  //   background-color: #fff;
+  //   border-top-left-radius: 10px;
+  //   border-top-right-radius: 10px;
+  //   width: 100%;
+  //   // width: 100%;
+  //   // padding: 0 !important;
+  //   // background: url(../assets/img/Home_Screen.png) no-repeat;
+  //   // background-size: cover;
+  // }
+  .menu_opt{
+    width: 100%;
+    height: 110px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    color: #3C94F8;
+    text-align: center;
+  }
+  .menu_opt .cus_icon{
+    font-size: 40px;
+    display: inline-block;
+    padding-top: 18px;
+  }
+  .menu_opt .icon_bg{
+    background-image: url(/assets/img/iconHome.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80px;
+    background-position: center;
+  }
+  .menu_opt .labelTitle{
+    font-size: 11px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  .toolbar-title-md {
+		/* padding: 0px 0px; */
+		font-size: 2rem;
+		font-weight: 500;
+		text-align: center;
+		margin-left: -25px;
+  }
+
+
+  /* ----------- iPhone X ----------- */
+
+/* Portrait */
+// @media only screen
+// and (min-device-width: 375px)
+// and (max-device-width: 812px)
+// and (-webkit-min-device-pixel-ratio: 3)
+// and (orientation: portrait) {
+
+//   .head_top{height: 60vh;}
+
+// }
+
+  /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+
+/* Portrait */
+// @media only screen
+// and (min-device-width: 375px)
+// and (max-device-width: 667px)
+// and (orientation: portrait) {
+
+//   .head_top{height: 50vh;}
+
+// }
+
+// @media only screen
+// and (min-device-width: 320px)
+// and (max-device-width: 767px)
+// and (orientation: portrait) {
+//   .main_view{
+//     height: 71vh;
+//   }
+// }
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait */
+// @media only screen
+//   and (min-device-width: 768px)
+//   and (max-device-width: 1024px)
+//   and (orientation: portrait)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     .main_view{
+//       height: 72vh;
+//     }
+// }
+
+
+
+}

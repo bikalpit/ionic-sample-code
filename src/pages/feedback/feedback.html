@@ -1,0 +1,34 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar color="primary">
+        <ion-title>Feedback</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating class="color-white">
+          Enter feedback
+          </ion-label>
+        <ion-textarea type="text" class="color-white" name="feedbackMessage" [(ngModel)] = "feedBack.feedbackMessage"  ></ion-textarea>
+      </ion-item>
+      
+    </form>
+
+    <div margin-top>
+      <button ion-button block tappable (click)="fnSendFeedback()" class="button-md-white my-fedback-button"  >
+        Submit
+      </button>
+
+    </div>
+</ion-content>

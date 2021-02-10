@@ -1,0 +1,47 @@
+<!--
+  Generated template for the ImagesliderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content class="tutorial-page">
+
+  <ion-slides pager>
+
+    <ion-slide *ngFor="let slide of slides" class="first_slide_bg">
+		
+    <ion-label class="img_logo">
+        <img class="slide_img" src="{{slide.image}}">
+    </ion-label>
+
+    <div class="height75">
+
+        <ion-label class="welcome_title">{{slide.title}}</ion-label>
+
+        <ion-label class="desc_title" >{{slide.description}}</ion-label>
+
+    </div>
+
+    <!--<ion-label class="comany_title"><strong>Make your online appointment</strong></ion-label>-->
+
+    <div class="m-t-10">
+      
+        <ion-label *ngIf="slide.skip!=''" icon-start class="skip_title" tappable (click)="fnSkipView()">{{slide.skip}}</ion-label>		
+        <ion-label *ngIf="slide.button!=''" icon-start class="login_title" tappable (click)="fnLoginView()">{{slide.button}}</ion-label>
+      
+    </div>
+
+<!--
+    <div class="swiper-wrapper"> 
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+            <button class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-label="Go to slide 1" data-slide-index="0"></button>
+            <button class="swiper-pagination-bullet" aria-label="Go to slide 2" data-slide-index="1"></button>
+            <button class="swiper-pagination-bullet" aria-label="Go to slide 3" data-slide-index="2"></button>
+          </div>
+    </div>  -->
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

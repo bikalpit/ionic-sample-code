@@ -1,0 +1,84 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Update User</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div padding>
+        <ion-card>
+
+            <ion-item no-lines padding margin-top>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="person"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="Full Name" name="fullname" [(ngModel)]="userInfo.fullname"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="mail"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="email" placeholder="Email" name="email" [(ngModel)]="userInfo.email"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="ios-create"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="description" name="Description" [(ngModel)]="userInfo.description"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="ios-phone-portrait"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="phone" name="Phone" [(ngModel)]="userInfo.phone"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="pin"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="address" name="Address" [(ngModel)]="userInfo.address"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="pin"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="city" name="City" [(ngModel)]="userInfo.city"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="pin"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="state" name="State" [(ngModel)]="userInfo.state"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="pin"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="zip" name="Zip" [(ngModel)]="userInfo.zip"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding>
+                <ion-label stacked color='primary' class="login_icon">
+                    <ion-icon name="pin"></ion-icon>
+                </ion-label>
+                <ion-input class="login_text" type="text" placeholder="country" name="Country" [(ngModel)]="userInfo.country"></ion-input>
+            </ion-item>
+
+            <ion-item no-lines padding margin-bottom>
+                <button ion-button icon-start class="login_btn" block color="dark" tappable (click)="saveUpdate()">Save</button>
+            </ion-item>
+
+        </ion-card>
+
+    </div>
+
+</ion-content>

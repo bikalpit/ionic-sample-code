@@ -1,0 +1,113 @@
+page-my-bookings {
+
+	.content .scroll-content{
+    	padding: 1px !important;
+	}
+
+	.my_booking ul{
+		list-style:none;
+		padding:0px;
+	}
+
+	.card_border_radius{
+		border-radius: 10px !important;
+	}
+
+
+	.booking_list{
+		height: auto;
+		position: inherit;
+		margin: 0px 0px;
+		overflow: hidden;
+		padding: 5px 10px;
+		background-color: fff;
+		border-radius: 4px;
+	}
+
+	
+	.price-all{
+		font-size: 25px;
+		margin-right: 32px;
+		color: #3C94F8;
+		font-weight: 600;
+		text-align: right;
+		margin-right: 0px;
+		letter-spacing: 0.5px;
+
+	}
+	.content .lblDate_lblTime{
+		font-size: 10px !important;
+		color: #A1B0C1;
+		font-weight: 600;
+		margin: 5px;
+
+	}
+
+	.price-all:first-letter{
+		font-size: 13px;
+	}
+
+	.content .badge3{
+		text-align: right;
+		height: 25px;
+		font-size: 13px !important;
+		margin-top: 15px;
+		margin-top: 24px;
+
+	}
+
+	.close_btn{
+		float: right;
+		color: #222326;
+		font-size: 18px;	
+		width: 13px;
+		font-weight: bolder;
+	}
+
+	.content .service_title{
+		text-transform: capitalize;
+		font-size: 18px;
+		font-weight: 500;
+		color: #3C94F8;
+
+	}	
+
+	.content .order_number{
+	    width: 100%;
+		display: block;
+		color: #fff;
+		font-weight: 500;
+		padding-top: 2px;
+		font-size: 13px;
+		background-color: #3C94F8;
+		width: 60px;
+		height: 25px;
+		margin-left: -15px;
+		text-align: center;
+		margin-top: 9px;
+		border-radius: 0px 12px 12px 0px;
+		line-height: 21px;
+
+	}	
+
+	.content label{
+		width:100%;
+		display: block;
+		color:#222326;
+		font-weight: 450;
+		padding-top: 2px;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+
+	}
+	
+}
+
+
+// My booking (All, Past, Upcoming) & My Transactions - 1 Day
+// New booking - 1 Day
+// My profile, Change password, About Us - 1 Day
+// Login, Forgot Password, Register - 1 Day
+// Sidebar, Home Page & Design testing and functionality testing - 1 Day
+
+

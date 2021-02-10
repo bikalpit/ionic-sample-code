@@ -1,0 +1,51 @@
+page-register,
+.register {
+	.color-white{
+		color:fff !important;
+	}
+    .auth-page .scroll-content .login-content .list-form ion-item input{
+    	color:fff !important;
+    }
+	.button-md-white{
+		color:#3C94F8;
+		background-color:fff;
+	}
+
+	.item-md{
+		height:80px;
+	}
+	.cus-mar-logo{
+		margin-top: 330px;
+	}
+	.mb-30{
+		margin-bottom: 30px;
+	}
+	.button-md-white {
+			background-color: fff;
+			color: #3C94F8;
+			border-radius: 20px;
+		}
+		// ***************
+		.color-dark{
+			color:#222326 ;
+		}
+		.primary-color{
+			color: #3C94F8;
+		}
+
+		.card_radious {
+			border-radius: 10px !important;
+			-webkit-box-shadow: 0 0 8px rgba(86, 61, 124, 0.2), 0 3px 7px rgba(86, 61, 124, 0.15);
+			box-shadow: 0 0 8px rgba(86, 61, 124, 0.2), 0 3px 7px rgba(86, 61, 124, 0.15);
+		  }
+		  .form_signup{
+			bottom: 5%;
+			width: 100%;
+			font-size: 1.3rem;
+			font-weight: 600;
+		  }
+		  .label-md {
+            margin: 13px 0px 13px 0;
+        }
+
+}

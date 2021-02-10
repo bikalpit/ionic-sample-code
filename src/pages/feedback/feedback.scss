@@ -1,0 +1,47 @@
+page-feedback {
+	.color-white{
+		color:black !important;
+		height: 100%;
+	}
+    .auth-page .scroll-content .login-content .list-form ion-item input{
+    	color:black !important;
+    }
+	.button-md-white{
+		color: #fff;
+		background-color:fff;
+	}
+	.logo{
+		width:110px !important;
+		height:110px !important;
+	}
+	.item-md{
+		height:80px;
+	}
+	.cus-mar-logo{
+		margin-top: 330px;
+	}
+	.my-fedback-button{
+		width: 100%;
+	    height: 44px;
+	    text-align: center;
+	    background-color: #3C94F8;
+	    color: fff;
+	    font-size: 17px;
+	    letter-spacing: 1px;
+	}
+	.item-label-floating .text-input-md{
+		height: 70px;
+	}
+	.item-md{
+		height: 120px;
+	}	
+	.toolbar-title-md {
+		/* padding: 0px 0px; */
+		font-size: 2rem;
+		font-weight: 500;
+		text-align: center;
+		margin-left: -28px;
+	}
+
+
+}
